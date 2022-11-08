@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+
+<style> 
+    #mainForm{
+        height: min-content;
+        width: 500px;
+        background-color: hsla(244, 13%, 23%, 0.438);
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        border: 2px solid #0971b61a;
+        box-shadow: 0 0 40px #043a77c5;
+        padding: 50px 15px;  
+    }
+
+  
+    #title{
+    color: white; font-family: verdana; font-weight: 500; font-size: 125%; position: relative;  left: 33%;
+    }
+    label   {color: white; font-family: verdana; font-weight: 500; padding-right: 10px; font-size: 100%; position: relative;}
+    
+    input    {color: rgba(244, 240, 237, 0.801); position: absolute; left: 150px;}
+    div {color:white ; padding-left: 50px; display: block;}
+    img {float: left; width: 70px; height: 70px; padding-right: 15px;}
+    h1   {color: white; font-family: verdana;   font-size: 160%; position: relative; text-align: center}
+    h2   {color: white; font-family: verdana;  padding-left: 30%; font-size: 80%; position: relative;}
+    button {margin-top: 50px;
+            width: 30%;
+            background-color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            left: 50%;
+            transform: translate(100%, -50%);
+            cursor: pointer;}
+    
+    input {
+        background-color: hsla(46, 88%, 47%, 0.096);
+        border-radius: 3px;}
+
+    #linkCenter {
+        left: 50%;
+        transform: translate(18%, -50%);
+        color: white;}
+    a {
+        color: white;
+    }
+    a:hover {
+         color: gold;
+    }
+    body{
+        background-image: url('assets/backdrop1.jpg');
+        background-repeat: repeat;
+        background-size: cover;
+    }
+    
+
+ </style>
+
+<head>
+    <title>SignIn Page</title>
+    <script type="text/javascript" src="validate1.js"> </script>
+</head>
+
+<body>
+
+<link rel="stylesheet" href="header.css" />
+        
+
+    <div id="header" style="padding-top: 10%;">
+        <img src="assets/logo.jpg">
+        <h1>SnowSurvey</h1>
+        <h2>Your local polling site</h2>
+    </div><Br>
+
+    <div id="mainForm">
+            
+        
+                <h1>Sign In Page</h1>
+                <form action="signin.php" id="SignIn" method="post">
+                        <table>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><label style="color: red; padding-left: 45px;" id="msg_email" class="err_msg"></label></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 20px; padding-top:15px">Email: </td>
+                                    <td> <input type="text" name="email" size="30" /></td>
+                                </tr>
+                                
+                    
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><label style="color: red; padding-left: 45px;"  id="msg_pswd" class="err_msg"></label></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 20px; padding-top:15px">Password: </td>
+                                    <td> <input type="password" name="pswd" size="30" /></td>
+                                </tr>
+                               
+                        </table><Br>
+                    <div style="overflow:auto; ">
+                    <input class="navButton" style="font-size: 20px; height: 35px; width: 90px;;
+                    cursor: pointer;" type="submit" value="Sign in" /><Br><Br><Br>
+                    <input class="navButton" style="font-size: 20px; height: 35px; width: 90px; position: absolute;" type="reset" value="Reset" /><Br>
+                    </div>
+                </form><Br><Br>
+                    
+                    <script type="text/javascript" src="signin-r.js"></script><Br>
+                    <div  id="display_info"></div><Br><Br>
+                
+                    <div id="linkCenter"> <A href="mainPage.html"> Back to HomePage</A></div>
+        </div>
+</body>

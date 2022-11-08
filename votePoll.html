@@ -1,0 +1,367 @@
+
+<style>
+    #mainForm{
+         height: min-content;
+         width: 600px;
+         background-color: hsla(240, 1%, 33%, 0.849);
+         position: absolute;
+         transform: translate(-50%,-50%);
+         top: 60%;
+         left: 50%;
+         border-radius: 10px;
+         border: 2px solid #0971b61a;
+         box-shadow: 0 0 40px #043a77c5;
+         padding: 50px 15px;  
+     }
+     body{
+         background-image: url('assets/backdrop1.jpg');
+         background-repeat:repeat-y ;
+         background-size: cover;
+     }
+    h3   {color: white; font-size: 100%; padding-left: -5%};
+     #mainArticle { 
+      grid-area: article;      
+   }
+ 
+   .label1{
+       position: relative;
+       display: inline-block;
+       
+   }
+   #avatarTxt{
+       display: inline-block;
+       vertical-align: middle;
+   }
+   #avatarBox{
+       background-color: hsla(0, 13%, 48%, 0.541);
+       height: 50px;
+   }
+   #detail{
+      color:#2657a1;
+    }
+    button{
+        position: absolute;
+        align-items: center;
+        left: 40%}
+
+        #fullBar{
+    box-sizing: content-box;
+    height: 10px; 
+    width: 80%;
+    top: 12px;
+    left:10%;
+    position: relative;
+    background: #137aceb0;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    color:white;
+    box-shadow: inset 0 -1px 1px #0a55924f;   }
+   #halfBar1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(197, 163, 13, 0.466) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(179, 121, 13, 0.664) 50%,
+                rgba(182, 93, 11, 0.685) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+    }
+    #halfBar2{
+        position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(197, 163, 13, 0.466) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(179, 121, 13, 0.664) 50%,
+                rgba(182, 93, 11, 0.685) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+    }
+    #halfBar3{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(197, 163, 13, 0.466) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(179, 121, 13, 0.664) 50%,
+                rgba(182, 93, 11, 0.685) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+    }
+    #halfBar4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(197, 163, 13, 0.466) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(179, 121, 13, 0.664) 50%,
+                rgba(182, 93, 11, 0.685) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+    }
+    #halfBar5{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(197, 163, 13, 0.466) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(179, 121, 13, 0.664) 50%,
+                rgba(182, 93, 11, 0.685) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+    }
+   
+ </style>
+ <HTML>
+<script>
+
+let post_id = 0;
+function yourFunction(){
+         //function defined here
+                     var xmlhttp = new XMLHttpRequest();
+                     xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                        //document.getElementById("txtHint").innerHTML = this.responseText;
+                        //we use JSON.parse to clean up the 
+                        let decodedText = JSON.parse(this.responseText);
+                        //console.log(this.responseText);
+                        //console.log(decodedText);
+                        //we get the length of the returned array from SQL as the highest number will be the latest question
+                        
+                       
+
+
+
+                        let length = decodedText.length;
+                        post_id = length;
+                        document.getElementById("q1").innerHTML = decodedText[length-1].content_Question;
+                        document.getElementById("user1").innerHTML = decodedText[length-1].Username;
+                        document.getElementById("q1a1").innerHTML = decodedText[length-1].Choice_1;
+                        document.getElementById("q1a2").innerHTML = decodedText[length-1].Choice_2;
+                        document.getElementById("q1a3").innerHTML = decodedText[length-1].Choice_3;
+                        document.getElementById("q1a4").innerHTML = decodedText[length-1].Choice_4;
+                        document.getElementById("q1a5").innerHTML = decodedText[length-1].Choice_5;
+
+                        //get the total number of votes
+                        let total = decodedText[length-1].Choice_5_stat+
+                        decodedText[length-1].Choice_1_stat+
+                        decodedText[length-1].Choice_2_stat+
+                        decodedText[length-1].Choice_3_stat+
+                        decodedText[length-1].Choice_4_stat;
+
+                        document.getElementById("q1s1").innerHTML = ((decodedText[length-1].Choice_1_stat/total)*100).toFixed(2)+'%';
+                        document.getElementById("halfBar1").style.width = ((decodedText[length-1].Choice_1_stat/total)*100).toFixed(2)+'%';
+
+                        document.getElementById("q1s2").innerHTML = ((decodedText[length-1].Choice_2_stat/total)*100).toFixed(2)+'%';
+                        document.getElementById("halfBar2").style.width = ((decodedText[length-1].Choice_2_stat/total)*100).toFixed(2)+'%';
+
+                        document.getElementById("q1s3").innerHTML = ((decodedText[length-1].Choice_3_stat/total)*100).toFixed(2)+'%';
+                        document.getElementById("halfBar3").style.width = ((decodedText[length-1].Choice_3_stat/total)*100).toFixed(2)+'%';
+
+                        document.getElementById("q1s4").innerHTML = ((decodedText[length-1].Choice_4_stat/total)*100).toFixed(2)+'%';
+                        document.getElementById("halfBar4").style.width = ((decodedText[length-1].Choice_4_stat/total)*100).toFixed(2)+'%';
+
+                        document.getElementById("q1s5").innerHTML = ((decodedText[length-1].Choice_5_stat/total)*100).toFixed(2)+'%';
+                        document.getElementById("halfBar5").style.width = ((decodedText[length-1].Choice_5_stat/total)*100).toFixed(2)+'%';
+
+                        //the chunk above will show the latest poll with the highest id number as the first poll
+
+                        }
+                     };
+
+                     xmlhttp.open("GET","mainPage.php",true);
+                     xmlhttp.send();
+         //recalls the function after every, we set an internal of 900,000ms to make it 90 seconds 
+         setTimeout(yourFunction, 900000);
+      }
+      //recalls the function
+      yourFunction();
+        
+
+
+
+      function voteFunc(){
+        let voteNumber = 0;
+        var ele = document.getElementsByName('option');
+        for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+                //console.log(ele[i].value);
+                voteNumber = ele[i].value;
+                //goes through all the votes and grabs an integer value either 1,2,3,4 or 5 depending on the vote number
+            }   
+        if (voteNumber != 0)
+        {
+            voteNumber = parseInt(voteNumber);
+            phpVote(voteNumber);
+            document.getElementById('myButton').disabled="true";
+            document.getElementById("myButton").innerHTML="Vote Casted";
+
+
+        }
+      }
+
+      function phpVote(voteNumber){
+            
+                var xmlhttp = new XMLHttpRequest();
+                     xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+
+                        }
+                        
+                     };
+            console.log(voteNumber);
+            console.log(post_id);
+            xmlhttp.open("GET","votePoll.php?number="+voteNumber+"&post="+post_id,true);
+            xmlhttp.send();
+            yourFunction();
+      }
+         
+</script>
+    <link rel="stylesheet" href="header.css">
+   <body onload="yourFunction()">  
+       <div id="header";>
+           <img src="assets/logo.jpg">
+           <h1>SnowSurvey</h1>
+           <h2>Your local polling site</h2>
+             <br></br>          
+       </div>
+       <div class="navBar" id="navBar">
+          <a href="mainPage.html" class="active">Home</a>
+          <a href="createPoll.html">Create</a>
+          <a href="votePoll.html">Vote</a>
+          <a href="pollManage.html">Manage</a>
+          <a href="signup.html" style="float:right">SignUp</a>
+          
+        </div>
+       <Br></br>
+ 
+    <div id="mainForm";>
+ 
+       <article>
+          <h1>Cast your vote!</h1>
+          <br></br>
+          <article id="result" style="padding-bottom: 15px;">
+            <h3 id="avatarBox"> 
+                  <img src="assets/avatar1.jpg" id="avatar1" style="height:50px;
+                  width:50px;">
+                   <p id="avatarTxt">Poll by: <span id="user1"></span></p> 
+               </h3>
+               <h3 id="q1">
+                  <a href="pollDetails.html" class="detail" id="detail"> + Detailed results</a>
+               </h3>
+               
+               <input type='radio' name='option' value='1' id='Vote1' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+               <label for='option-1' id="q1a1" style=' color:white;padding-left: 5px;'> </label>
+               <br></br>
+               <div class="fullBar" id="fullBar">
+                <span id="q1s1"></span>
+                <span style="width: 25%" class="halfBar" id="halfBar1"></span>   
+                </div>
+                <br></br>
+
+               <input type='radio' name='option' value='2' id='Vote2' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+               <label for='option-2' id="q1a2" style=' color:white;padding-left: 5px;'> </label>
+               <br></br>
+               <div class="fullBar" id="fullBar">
+               <span id="q1s2">%</span>
+               <span style="width: 25%" class="halfBar" id="halfBar2"></span>   
+               </div>
+               <br></br>
+
+               <input type='radio' name='option' value='3' id='Vote3' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+               <label for='option-3' id="q1a3" style=' color:white;padding-left: 5px;'> </label>
+               <br></br>
+               <div class="fullBar" id="fullBar">
+               <span id="q1s3">%</span>
+               <span style="width: 25%" class="halfBar" id="halfBar3"></span>   
+               </div>
+               <br></br>
+
+               <input type='radio' name='option' value='4' id='Vote4' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+               <label for='option-4' id="q1a4" style=' color:white;padding-left: 5px;'> </label>
+               <br></br>
+               <div class="fullBar" id="fullBar">
+               <span id="q1s4">%</span>
+               <span style="width: 25%" class="halfBar" id="halfBar4"></span>   
+               </div>
+               <br></br>
+
+               <input type='radio' name='option' value='5' id='Vote5' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+               <label for='option-5' id="q1a5" style=' color:white;padding-left: 5px;'> </label>
+               <br></br>    
+               <div class="fullBar" id="fullBar">
+               <span id="q1s5">%</span>
+               <span style="width: 25%" class="halfBar" id="halfBar5"></span>   
+               </div>
+               <br></br>          
+          </article>
+          <br></br>
+          <Button onclick="voteFunc()" id="myButton"> Submit Vote</Button>
+
+        </article>
+ 
+    </div>
+ 
+ </HTML>

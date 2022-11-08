@@ -1,0 +1,31 @@
+body {background-color: black;}
+            
+img {float: left; width: 70px; height: 70px; padding-right: 15px;}
+            
+h1   {color: blue; font-family: verdana;  padding: 1px; font-size: 160%; position: relative;}
+            
+p    {color: gray;  padding-left: 30px;}
+            
+div {color:gray ; padding-left: 50px;}
+
+a:before{
+  color:white;
+}
+a:hover {
+  color: hotpink;
+}
+
+footer {
+  padding: 0.5em;
+  color: blue;
+  background-color: gray;
+clear: left;
+}
+
+section {
+  position: fixed;
+    top: 10%;
+    left: 80%;
+  border-left: 1px solid blue;
+  padding: 1em;
+}

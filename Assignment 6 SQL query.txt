@@ -1,0 +1,131 @@
+The javascript function showUser() loads as soon as the page loads
+<body onload="showUser()">  
+
+
+
+SQL query for adding Questions:
+
+
+INSERT INTO Poll1 (post_id , Username, Date, content_Question, Choice_1, Choice_2, Choice_3, Choice_4, Choice_5, Choice_1_stat, Choice_2_stat, Choice_3_stat, Choice_4_stat, Choice_5_stat) 
+Values (
+'0',
+'Mayer',
+'2021-12-12',
+'Should face covering masks be worn at school ',
+'Yes',
+'No',
+'Maybe',
+'Dont know',
+'Only in class',
+'10',
+'16',
+'5',
+'8',
+'9');
+
+
+
+INSERT INTO Poll1 (post_id , Username, Date, content_Question, Choice_1, Choice_2, Choice_3, Choice_4, Choice_5, Choice_1_stat, Choice_2_stat, Choice_3_stat, Choice_4_stat, Choice_5_stat) 
+Values (
+'0',
+'Mayer',
+'2021-12-12',
+'Whats a hobby that you have thats a little geeky',
+'Gaming',
+'Computers',
+'Tech',
+'Collecting cards',
+'Coding',
+'10',
+'16',
+'5',
+'8',
+'9');
+
+
+
+Insert into Poll1 Values ('0','Mayer','2021-12-12','Whats a hobby that you have that's a little geeky','Gaming','Computers','Tech','Collecting cards','Coding','10','16','5','8','9');
+
+
+
+INSERT INTO Poll1 (post_id , Username, Date, content_Question, Choice_1, Choice_2, Choice_3, Choice_4, Choice_5, Choice_1_stat, Choice_2_stat, Choice_3_stat, Choice_4_stat, Choice_5_stat) 
+Values (
+'0',
+'Abdul',
+'2021-12-12',
+'If you had to scrap all social media except one, which would you keep',
+'Instagram',
+'FaceBook',
+'TikTok',
+'Twitter',
+'Snapchat',
+'10',
+'16',
+'5',
+'8',
+'9');
+
+
+
+
+
+INSERT INTO Poll1 (post_id , Username, Date, content_Question, Choice_1, Choice_2, Choice_3, Choice_4, Choice_5, Choice_1_stat, Choice_2_stat, Choice_3_stat, Choice_4_stat, Choice_5_stat) 
+Values (
+'0',
+'Harry Potter',
+'2021-12-12',
+'Which Harry Potter house best describes your values',
+'Gryffindor for bravery',
+'Hufflepuff for patience',
+'Ravenclaw for wit',
+'Slytherin for ambition',
+'Or all four?',
+'10',
+'16',
+'5',
+'8',
+'9');
+
+
+
+
+
+INSERT INTO Poll1 (post_id , Username, Date, content_Question, Choice_1, Choice_2, Choice_3, Choice_4, Choice_5, Choice_1_stat, Choice_2_stat, Choice_3_stat, Choice_4_stat, Choice_5_stat) 
+Values (
+'0',
+'Bill cookBoy',
+'2021-12-12',
+'Whos the funniest comedian',
+'Jim Carrey',
+'Ricky Grevais',
+'Joe Rogan',
+'Ali',
+'Wong',
+'10',
+'16',
+'5',
+'8',
+'9');
+
+
+
+INSERT INTO Poll1 (post_id , Username, Date, content_Question, Choice_1, Choice_2, Choice_3, Choice_4, Choice_5, Choice_1_stat, Choice_2_stat, Choice_3_stat, Choice_4_stat, Choice_5_stat) 
+Values (
+'0',
+'Hill Kelly',
+'2021-12-12',
+'Which Engineering is the best',
+'Software',
+'Mechanical',
+'Civil',
+'Electrical',
+'Industrial',
+'10',
+'16',
+'5',
+'8',
+'9');
+
+
+
+

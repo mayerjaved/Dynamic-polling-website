@@ -1,0 +1,214 @@
+<?php
+    $user_id = "";
+    $screen_name = "";
+    //$avatar = $_POST['avatar'];
+
+session_start();
+
+$user_id = $_SESSION["user_id"];
+$screen_name = $_SESSION["screen_name"];
+//print_r($user_id);
+//print_r($screen_name);
+$question = $_POST['question'];
+
+try{
+    $conn = new PDO("mysql:host=localhost;dbname=mjn622", "mjn622", "Mr2abi.");
+
+}  catch (PDOException $e) {
+    die("Error: " . $e->getMessage());
+} 
+
+$q = "Insert into Polls Values (0, '$user_id', '$question', '08/09/2022', '08/09/2022', 'NULL', 'NULL')";
+$result = $conn->exec($q);
+echo($result);
+
+?>
+
+
+<!DOCTYPE html>
+
+<HTML>
+<style>
+    #mainForm{
+         height: min-content;
+         width: 600px;
+         background-color: hsla(240, 1%, 33%, 0.849);
+         position: absolute;
+         transform: translate(-50%,-50%);
+         top: 130%;
+         left: 50%;
+         border-radius: 10px;
+         border: 2px solid #0971b61a;
+         box-shadow: 0 0 40px #043a77c5;
+         padding: 50px 15px;  
+     }
+     body{
+         background-image: url('assets/backdrop1.jpg');
+         background-repeat:repeat-y ;
+         background-size: cover;
+     }
+    h3   {color: white; font-size: 100%; padding-right: 5%}
+
+    #mainArticle { 
+      grid-area: article      
+   }
+ 
+   .label1{
+       position: relative;
+       display: inline-block;
+       
+   }
+   #avatarTxt{
+       display: inline-block;
+       vertical-align: middle;
+   }
+   #avatarBox{
+       background-color: hsla(0, 13%, 48%, 0.541);
+       height: 50px;
+   }
+   #detail{
+      color:#2657a1;
+    }
+    button{
+        position: absolute;
+        align-items: center;
+        left: 40%
+    }
+
+    .textBox {
+        position:relative;
+        height: 40px;
+        width: 350px;
+        left: 10%;
+        color:white;
+        background-color: hsla(0, 13%, 48%, 0.541);
+
+    }
+    .textBox1 {
+        position:relative;
+        height: 80px;
+        width: 70%;
+        left: 5%;
+        color:white;
+        background-color: hsla(0, 13%, 48%, 0.541);
+
+    }
+</style>
+<head>
+    <title>Poll Creation Page</title>
+    
+</head>
+<body>
+        <link rel="stylesheet" href="header.css" />
+
+                
+        
+            <div id="header" style="padding-top: 10%;">
+                <img src="assets/logo.jpg">
+                <h1>SnowSurvey</h1>
+                <h2>Your local polling site</h2>
+            </div><Br>
+            <div class="navBar" id="navBar">
+                <a href="mainPage.html" class="active">Home</a>
+                <a href="createPoll.html">Create</a>
+                <a href="votePoll.html">Vote</a>
+                <a href="pollManage.html">Manage</a>
+                <a href="signup.html" style="float:right">Signed In as <?=$_SESSION["screen_name"]?></a>
+            </div>
+            <Br>
+        
+            <div id="mainForm">
+
+                        <h1>Poll Creation Page</h1>
+
+
+                        <h3 id="avatarBox"> 
+                            <img src="assets/avatar1.jpg" id="avatar1" style="height:50px;
+                            width:50px;">
+                             <p id="avatarTxt">Poll by: <?=$_SESSION["screen_name"]?></p> 
+                         </h3>
+                         <Br>
+
+                        <form  id="createPoll" method="post">
+                                <table>
+                                        <h3>Enter Poll Topic:
+                                            <a href="pollResults.html" class="detail" id="detail"></a>
+                                            <input class="textBox1" type="text" id="poll_input" name="question" placeholder="Enter poll question"><Br><Br>
+                                                <label style="color: rgba(0, 162, 255, 0.808); padding-left: 40px;" id="count_0" class="err_msg">  </label><Br>
+                                        </h3><Br>
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Starting Date: </p>
+
+                                            <input type="date" id="start" name="trip-start"
+                                                   value="2018-07-22"
+                                                   min="2018-01-01" max="2018-12-31">
+                                            <div>
+                                            <input type="text" id="startDate" placeholder="Enter manually YYYY-MM-DD" style=" height: 30px;
+                                            width: 180px;">                                             
+                                            <label style="color: rgba(0, 162, 255, 0.808); padding-left: 10px; position: absolute;" id="start_valid">Enter manually YYYY-MM-DD  </label></div>
+                                        </div><Br>
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Ending Date: </p>
+
+                                            <input type="date" id="start" name="trip-start"
+                                                    value="2018-07-22"
+                                                    min="2018-01-01" max="2018-12-31">
+                                            <div>
+                                                <input type="text" id="endDate" placeholder="Enter manually YYYY-MM-DD" style=" height: 30px;
+                                                width: 180px;">                                             
+                                                <label style="color: rgba(0, 162, 255, 0.808); padding-left: 10px; position: absolute;" id="end_valid">Enter manually YYYY-MM-DD  </label>
+
+                                            </div>
+                                        </div><Br>
+                                        
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Enter Option #1: </p>
+                                            <input id="q_1" class="textBox" type="text" name="email"/><Br><Br>
+                                            <label style="color: rgba(0, 162, 255, 0.808); padding-left: 40px; position: absolute;" id="count_1" class="err_msg"> Character limit left is: 50  </label>
+                                        </div><Br>
+                                        
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Enter Option #2: </p>
+                                            <input id="q_2" class="textBox" type="text" name="email"/><Br><Br>
+                                            <label style="color: rgba(0, 162, 255, 0.808); padding-left: 40px; position: absolute;" id="count_2" class="err_msg"> Character limit left is: 50  </label>
+                                        </div><Br>
+                                        
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Enter Option #3: </p>
+                                            <input id="q_3" class="textBox" type="text" name="email"/><Br><Br>
+                                            <label style="color: rgba(0, 162, 255, 0.808); padding-left: 40px; position: absolute;" id="count_3" class="err_msg"> Character limit left is: 50  </label>
+                                        </div><Br>
+                                        
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Enter Option #4: </p>
+                                            <input id="q_4" class="textBox" type="text" name="email"/><Br><Br>
+                                            <label style="color: rgba(0, 162, 255, 0.808); padding-left: 40px; position: absolute;" id="count_4" class="err_msg"> Character limit left is: 50  </label>
+                                        </div><Br>
+                                        
+                                        <div>
+                                            <p style="font-size: 20px; padding-top:15px ;color: white;">Enter Option #5: </p>
+                                            <input id="q_5" class="textBox" type="text" name="email"/><Br><Br>
+                                            <label style="color: rgba(0, 162, 255, 0.808); padding-left: 40px; position: absolute;" id="count_5" class="err_msg"> Character limit left is: 50  </label>
+                                        </div><Br>
+                                        
+
+                                        
+                                </table><Br><Br>
+                                        
+                                <div style="overflow:auto; ">
+                                <input class="navButton" style="font-size: 20px; height: 35px; width: 90px;;
+                                cursor: pointer;" type="submit" value="Sign up" /><Br><Br>
+                                <input class="navButton" style="font-size: 20px; height: 35px; width: 90px; position: absolute;" type="reset" value="Reset" /><Br>
+                                </div>
+                                </form><Br><Br>
+                    
+                                <div  id="display_info"></div><Br><Br>
+        
+        
+        
+                                
+                                <div id="linkCenter"> <A href="mainPage.html"> Back to HomePage</A></div>
+                </div>
+                <script type="text/javascript" src="create-r.js"> </script>
+        </body>
+</HTML>

@@ -1,0 +1,146 @@
+
+<style>
+    #mainForm{
+         height: min-content;
+         width: 600px;
+         background-color: hsla(240, 1%, 33%, 0.849);
+         position: absolute;
+         transform: translate(-50%,-50%);
+         top: 60%;
+         left: 50%;
+         border-radius: 10px;
+         border: 2px solid #0971b61a;
+         box-shadow: 0 0 40px #043a77c5;
+         padding: 50px 15px;  
+     }
+     body{
+         background-image: url('assets/backdrop1.jpg');
+         background-repeat:repeat-y ;
+         background-size: cover;
+     }
+    h3   {color: white; font-size: 100%; padding-left: -5%};
+     #mainArticle { 
+      grid-area: article;      
+   }
+ 
+   .label1{
+       position: relative;
+       display: inline-block;
+       
+   }
+   #avatarTxt{
+       display: inline-block;
+       vertical-align: middle;
+   }
+   #avatarBox{
+       background-color: hsla(0, 13%, 48%, 0.541);
+       height: 50px;
+   }
+   #detail{
+     color:#2657a1;
+   }
+   #fullBar{
+    box-sizing: content-box;
+    height: 10px; 
+    width: 80%;
+    top: 12px;
+    left:10%;
+    position: relative;
+    background: #137aceb0;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    color:white;
+    box-shadow: inset 0 -1px 1px #0a55924f;   }
+   #halfBar{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(197, 163, 13, 0.466) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(179, 121, 13, 0.664) 50%,
+                rgba(182, 93, 11, 0.685) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+    }
+   
+
+ </style>
+
+<HTML>
+    <link rel="stylesheet" href="header.css">
+    <body>  
+       <div id="header";>
+           <img src="assets/logo.jpg">
+           <h1>SnowSurvey</h1>
+           <h2>Your local polling site</h2>
+             <br></br>          
+       </div>
+       <div class="navBar" id="navBar">
+        <a href="mainPage.html" class="active">Home</a>
+        <a href="createPoll.html">Create</a>
+        <a href="votePoll.html">Vote</a>
+        <a href="pollManage.html">Manage</a>
+        <a href="signup.html" style="float:right">SignUp</a>
+        
+      </div>
+       <Br></br>
+
+        <div id="mainForm";>
+
+            <article>
+               <h1>Poll Details</h1>
+               <h2 style="left:-5%">Shows the Poll choices and number of votes cast.</h2>
+               <br></br>
+               <article style="padding-bottom: 15px;">
+                     <h3 id="avatarBox"> 
+                        <img src="assets/avatar1.jpg" id="avatar1" style="height:50px;
+                        width:50px;">
+                         <p id="avatarTxt">Poll by: Mayer,</p>
+                         <p id="avatarTxt">Added on Date: July 16th, 2022</p> 
+                     </h3>
+                     <h3>1. Should face covering masks be worn at school 
+                    </h3>
+                     
+                   
+                     <label for='option-1' style=' color:white;padding-left: 25px;'>
+                     <input type='radio' name='option' value='Yes' id='option-1' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+                     Yes</label>
+                     <div class="fullBar" id="fullBar">
+                        13
+                        <span style="width: 25%" class="halfBar" id="halfBar"></span>   
+                     </div>
+                     
+                     
+                     <br></br>
+                     <label for='option-2' style=' color:white;padding-left: 25px;'>
+                     <input type='radio' name='option' value='Yes' id='option-2' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+                     No</label>
+                     <div class="fullBar" id="fullBar">
+                        14
+                        <span style="width: 27%" class="halfBar" id="halfBar"></span>   
+                     </div>
+                     <br></br>
+                     <label for='option-3' style=' color:white;padding-left: 25px;'>
+                     <input type='radio' name='option' value='Yes' id='option-3' style='transform: scale(1.0); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+                     In Class only</label>
+                     <div class="fullBar" id="fullBar">
+                        20
+                        <span style="width: 40%" class="halfBar" id="halfBar"></span>   
+                     </div>
+               </article>
+            </article>
+    </body>
+</HTML>

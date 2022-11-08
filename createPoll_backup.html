@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<HTML>
+<style>
+    #mainForm{
+         height: min-content;
+         width: 600px;
+         background-color: hsla(240, 1%, 33%, 0.849);
+         position: absolute;
+         transform: translate(-50%,-50%);
+         top: 80%;
+         left: 50%;
+         border-radius: 10px;
+         border: 2px solid #0971b61a;
+         box-shadow: 0 0 40px #043a77c5;
+         padding: 50px 15px;  
+     }
+     body{
+         background-image: url('assets/backdrop1.jpg');
+         background-repeat:repeat-y ;
+         background-size: cover;
+     }
+    h3   {color: white; font-size: 100%; padding-right: 5%}
+
+    #mainArticle { 
+      grid-area: article      
+   }
+ 
+   .label1{
+       position: relative;
+       display: inline-block;
+       
+   }
+   #avatarTxt{
+       display: inline-block;
+       vertical-align: middle;
+   }
+   #avatarBox{
+       background-color: hsla(0, 13%, 48%, 0.541);
+       height: 50px;
+   }
+   #detail{
+      color:#2657a1;
+    }
+    button{
+        position: absolute;
+        align-items: center;
+        left: 40%
+    }
+
+    .textBox {
+        position:relative;
+        height: 40px;
+        width: 60%;
+        left: 20%;
+        color:white;
+        background-color: hsla(0, 13%, 48%, 0.541);
+
+    }
+    .textBox1 {
+        position:relative;
+        height: 50px;
+        width: 70%;
+        left: 5%;
+        color:white;
+        background-color: hsla(0, 13%, 48%, 0.541);
+
+    }
+</style>
+    <link rel="stylesheet" href="header.css">
+    <body>  
+       <div id="header">
+           <img src="assets/logo.jpg">
+           <h1>SnowSurvey</h1>
+           <h2>Your local polling site</h2>
+             <Br>          
+       </div>
+       <div class="navBar" id="navBar">
+            <a href="mainPage.html" class="active">Home</a>
+            <a href="createPoll.html">Create</a>
+            <a href="votePoll.html">Vote</a>
+            <a href="pollManage.html">Manage</a>
+            <a href="signup.html" style="float:right">Signed In as Mayer</a>
+            
+      </div>
+       <Br>
+        
+
+        <div id="mainForm">
+
+            
+               <h1>Create Poll</h1>
+               <Br>
+               <article style="padding-bottom: 15px;">
+                    
+                     <h3 id="avatarBox"> 
+                        <img src="assets/avatar1.jpg" id="avatar1" style="height:50px;
+                        width:50px;">
+                         <p id="avatarTxt">Poll by: Mayer</p> 
+                     </h3>
+                     <Br>
+                     
+
+                    <form id="createPoll" method="post">
+
+                        <h3>Enter Poll Topic:
+                            <a href="pollResults.html" class="detail" id="detail"></a>
+                            <input class="textBox" type="text" id="poll_input" name="firstname" placeholder="Enter first Choice"><Br>
+                                <label style="color: red; padding-left: 55px;" id="poll_topic" class="err_msg"> </label><Br>
+                         </h3><Br>
+                         
+                     <label style=' color:white;padding-left: 25px;'>Enter Option #1: </label><Br>
+                     <label style="color: red; padding-left: 55px;" id="choice_1" class="err_msg"> </label><Br>
+                     <input class="textBox" type="text" id="first_choice_input" name="firstname" placeholder="Enter first Choice"><Br><Br>
+                     
+                     <label style=' color:white;padding-left: 25px;'>Enter Option #2:</label><Br>
+                        <label style="color: red; padding-left: 55px;" id="choice_2" class="err_msg"></label><Br>
+                     <input class="textBox" type="text" id="second_choice_input" name="firstname" placeholder="Enter second Choice"><Br><Br>
+                     
+                      
+                     <label style=' color:white;padding-left: 25px;'>Enter Option #3:</label><Br>
+                        <label style="color: red; padding-left: 55px;" id="choice_3" class="err_msg">error</label><Br>
+                     <input class="textBox" type="text" id="third_choice_input" name="firstname" placeholder="Enter third Choice"><Br><Br>
+
+                      
+                     <label style=' color:white;padding-left: 25px;'>Enter Option #4:</label><Br>
+                        <label style="color: red; padding-left: 55px;" id="choice_4" class="err_msg">error</label><Br>
+                     <input class="textBox" type="text" id="forth_choice_input" name="firstname" placeholder="Enter forth Choice"><Br><Br>
+
+                      
+                     <label style=' color:white;padding-left: 25px;'>Enter Option #5:</label><Br>
+                        <label style="color: red; padding-left: 55px;" id="choice_5" class="err_msg">error</label><Br>
+                     <input class="textBox" type="text" id="fifth_choice_input" name="firstname" placeholder="Enter fifth Choice"><Br><Br>
+                     
+                    </form>
+
+
+                    <input class="navButton" style="font-size: 20px; height: 35px; width: 90px;
+                        cursor: pointer;" type="submit" value="Sign up" /><Br><Br><Br>
+                    
+               </article></div>
+               <script type="text/javascript" src="create-r.js"></script><Br>
+
+</body></HTML>
